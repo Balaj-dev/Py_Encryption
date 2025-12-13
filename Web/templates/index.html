@@ -2,9 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Crypto-Toolkit</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
+    <div class="sidebar" id="side_bar">
+        <h2>Wellcome to Crypto-Toolkit</h2>
+        <button id="encoding_button">Encoding</button>
+        <button id="encrypion_button">Encryption</button>
+        <button id="hashing_button">Hashing</button>
+
+    </div>
+
+
+    <div id="option_area">
+
+        <div id="encoding">
+            <input type="radio" id="b32_op" name="encoding" value="b32">
+            <label for="b32_op">Base32</label><br>
+
+            <input type="radio" id="b64_op" name="encoding" value="b64">
+            <label for="b64_op">Base64</label><br>
+
+            <input type="radio" id="hex_op" name="encoding" value="hex">
+            <label for="hex_op">Hexadecimal</label><br>
+
+            <input type="radio" id="morse_op" name="encoding" value="morse" checked>
+            <label for="morse_op">Morse Code</label>
+            <br><hr>
+        </div>
+
+
+
+
+    </div>
+    <div id="result_area">
+
+
+
+    </div>
+
+
 </body>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
 </html>
