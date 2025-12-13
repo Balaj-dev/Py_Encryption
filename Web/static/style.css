@@ -1,5 +1,117 @@
-*{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: x-large;
+.app {
+  display: grid;
+  grid-template-columns: 400px 1fr 2fr;
+  height: 100vh;
 }
 
+/* ====== Reset ====== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
+  background: #0f1220;
+  color: #e6e6eb;
+}
+
+/* ====== Main Layout ====== */
+body {
+  display: grid;
+  grid-template-columns: 400px 1fr 2fr; /* sidebar | option_area | result_area */
+  height: 100vh;
+}
+
+/* ====== Sidebar ====== */
+#side_bar {
+  background: #151833;
+  border-right: 1px solid #242859;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+#side_bar h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.9;
+}
+
+#side_bar button {
+  background: #1e2255;
+  border: 1px solid #2d327a;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  text-align: left;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+#side_bar button:hover {
+  background: #2a2f7a;
+}
+
+#side_bar button.active {
+  background: #3c42c9;
+  border-color: #4c53ff;
+}
+
+/* ====== Options Area ====== */
+#option_area {
+  background: #11142b;
+  border-right: 1px solid #242859;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+#option_area hr {
+  border: none;
+  border-top: 1px solid #242859;
+  margin: 1rem 0;
+}
+
+#option_area label {
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+#option_area input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+/* ====== Result Area ====== */
+#result_area {
+  background: #0c0f22;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 1100px) {
+  body {
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  #result_area {
+    grid-column: span 2;
+    border-top: 1px solid #242859;
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+
+  #side_bar, #option_area {
+    border-right: none;
+    border-bottom: 1px solid #242859;
+  }
+}
