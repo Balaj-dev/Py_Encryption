@@ -13,7 +13,7 @@ def index():
 
 
     return render_template(
-        "index.html",
+            "index.html",
         encoding=selected_encoding,
         text=input_text
     )
