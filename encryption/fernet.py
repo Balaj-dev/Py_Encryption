@@ -1,3 +1,13 @@
-from cryptography import fernet
+# from cryptography import fernet
+#
+# print(dir(fernet))
 
-print(dir(fernet))
+from cryptography.fernet import Fernet
+key = Fernet.generate_key()
+f = Fernet(key)
+token = f.encrypt(b"A really secret message. Not for prying eyes.")
+
+print(token)
+print(f.decrypt(token))
+print(key)
+
