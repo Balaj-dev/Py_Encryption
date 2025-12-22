@@ -5,18 +5,8 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.backends import default_backend
 
 def derive_fernet_key(password: str, salt: bytes = None) -> tuple[bytes, bytes]:
-    """
-    Derive a Fernet-compatible key from a password using PBKDF2HMAC.
 
-    Args:
-        password (str): The user-provided password.
-        salt (bytes, optional): Random salt. If None, a new 16-byte salt is generated.
 
-    Returns:
-        tuple[bytes, bytes]: (fernet_key, salt)
-            - fernet_key: 32-byte Fernet key (base64-encoded)
-            - salt: 16-byte salt used for key derivation (store for future use)
-    """
     if salt is None:
         salt = os.urandom(16)  # generate new random salt
 
