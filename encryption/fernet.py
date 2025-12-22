@@ -30,18 +30,24 @@ if password == None:
     password = Fernet.generate_key()
 else:
     pass
-
 # DERIVE FERNET KEY
 key, salt = derive_fernet_key(password)
-
-print("Derived key:", key)
-print("Salt (store this):", salt)
-
 # CREATE FERNET OBJECT
 f = Fernet(key)
 
 # ENCRYPT
-text = input("Enter text to encrypt: ")
-token = f.encrypt(text.encode())
+def fet_encrypt():
+    print("Derived key:", key)
+    print("Salt (store this):", salt)
+    text = input("Enter text to encrypt: ")
+    token = f.encrypt(text.encode())
+    print("Encrypted token:", token)
 
-print("Encrypted token:", token)
+def fet_decrypt():
+    text = input("enter the text: ")
+    key = input("enter fernet key: ")
+    f = Fernet(key)
+    decrypt = f.decrypt(text , key)
+
+
+
