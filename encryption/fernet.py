@@ -5,6 +5,8 @@ from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.backends import default_backend
 
+
+
 def derive_fernet_key(password: str, salt: bytes = None) -> tuple[bytes, bytes]:
 
     if salt is None:
@@ -24,6 +26,10 @@ def derive_fernet_key(password: str, salt: bytes = None) -> tuple[bytes, bytes]:
 
 # USER ENTERS PASSWORD (NOT RAW KEY)
 password = input("Enter password: ")
+if password == None:
+    password = Fernet.generate_key()
+else:
+    pass
 
 # DERIVE FERNET KEY
 key, salt = derive_fernet_key(password)
