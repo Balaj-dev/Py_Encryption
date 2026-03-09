@@ -18,11 +18,13 @@
         <h2>Welcome to Crypto-Toolkit</h2>
         <p>Choose a tool to start working with text encoding, encryption, or hashing.</p>
 
-        <button id="encoding_button" class="tool-btn active">Encoding</button>
-        <button id="encryption_button" class="tool-btn">Encryption</button>
-        <button id="hashing_button" class="tool-btn">Hashing</button>
-    </div>
+        <form method="POST">
+            <button id="encoding_button" name="operation" value="encoding" class="tool-btn active">Encoding</button>
+            <button id="encryption_button" name="operation" value="encryption" class="tool-btn">Encryption</button>
+            <button id="hashing_button" name="operation" value="hashing" class="tool-btn">Hashing</button>
+        </form>
 
+    </div>
     <!-- Options Area -->
     <div id="option_area">
 
