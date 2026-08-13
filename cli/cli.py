@@ -13,6 +13,10 @@ parser.add_argument('filename')           # positional argument
 parser.add_argument('-c', '--count')      # option that takes a value
 parser.add_argument('-v', '--verbose',
                     action='store_true')
+arg = parser.parse_args()
+
+print(arg)
+
 
 if __name__ == '__main__':
     read_from = input("what you want 32 , 63 , morse, hexa : ")
@@ -31,10 +35,10 @@ if __name__ == '__main__':
     else:
         pass
 
-user = input("")
-if user == 'e':
-    fet_encrypt()
-else:
-    fet_decrypt()
-
-
+# user = input("")
+# if user == 'e':
+#     fet_encrypt()
+# else:
+#     fet_decrypt()
+#
+#
