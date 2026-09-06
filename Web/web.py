@@ -7,15 +7,15 @@ def index():
     selected_encoding = None
     input_text = ""
 
-    # if request.method == "POST":
-    #     selected_coding = request.form.get("operation")
-    #     # input_text = request.form.get
-    #     # type = request.form.get
-    #
-    #     if selected_coding == "encoding":
-    #         print("")
-    #
-    #     print(selected_coding)
+    if request.method == "POST":
+        selected_coding = request.form.get("operation")
+        # input_text = request.form.get
+        # type = request.form.get
+
+        if selected_coding == "encoding":
+            print("")
+
+        print(selected_coding)
 
     return render_template(
             "index.html",

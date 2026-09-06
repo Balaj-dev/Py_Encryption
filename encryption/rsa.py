@@ -6,6 +6,6 @@ private_key = rsa.generate_private_key(
 
 print(private_key)
 
-def encrypted_rsa():
+def encrypted_rsa(text:str) -> str:
     return
 
